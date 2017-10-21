@@ -5,15 +5,22 @@ $(document).ready(function() {
 	
 	// toggle menu when hamburger is clicked	
 	$('#hamburger').click(function(){
-		$('#hamburger').toggleClass('open');
+		$(this).toggleClass('open');
 
 		if ($(this).attr('class') == 'open') {
+			$('#menu ul').css('display', 'block');
 			$('#menu ul li a').removeClass('fadeOutUp').addClass('fadeInDown');
+			$('#menu ul li').on('click', function() {
+				$('#menu ul li').removeClass('active-item');
+		        $('#menu ul li').find('span').removeClass('span-active');
+		        $(this).addClass('active-item');
+		        $(this).find('span').addClass('span-active'); })
 		} else {
 			$('#menu ul li a').removeClass('fadeInDown').addClass('fadeOutUp');
+			$('#menu ul').css('display', 'none');
 		}
 	});
-		
+	
 	// hover animations for menu items
 	$(function() {
 		var line, 
@@ -36,7 +43,7 @@ $(document).ready(function() {
 	// ---- HIDE LANDING PAGE : SHOW HOME PAGE ----
 
 	// if ( window.location.href === "http://laurenschilling.com.au" ) {
-	if ( window.location.href === "http://localhost:8888/portfolioSite/" ) {
+	if ( window.location.href === "http://localhost:8888/github/portfolio" ) {
 
 		$('#landing img').click(function() {
 			$('#landing').hide();

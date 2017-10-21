@@ -157,7 +157,6 @@ nav {
 	#hamburger {
 		position: fixed;
 		cursor: pointer;
-/*
 		-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);
 		-o-transform: rotate(0deg);
@@ -165,8 +164,7 @@ nav {
 		-webkit-transition: .5s ease-in-out;
 		-moz-transition: .5s ease-in-out;
 		-o-transition: .5s ease-in-out;
-		transition: .5s ease-in-out;
-*/ }
+		transition: .5s ease-in-out; }
 		
 		#hamburger span {
 			background-color: #fff;
@@ -175,6 +173,15 @@ nav {
 			display: block;
 			margin: 0 0 3px 0;
 			opacity: 1;
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg);
+			-webkit-transition: .25s ease-in-out;
+			-moz-transition: .25s ease-in-out;
+			-o-transition: .25s ease-in-out;
+			transition: .25s ease-in-out;
+/*
 			-webkit-animation-name: hamburger-animate;
 			animation-name: hamburger-animate;
 			-webkit-animation-iteration-count: infinite;
@@ -182,7 +189,8 @@ nav {
 			-webkit-animation: transform .25s cubic-bezier(0.445, 0.050, 0.550, 0.950); 
 			-moz-animation: transform .25s cubic-bezier(0.445, 0.050, 0.550, 0.950); 
 		    -o-animation: transform .25s cubic-bezier(0.445, 0.050, 0.550, 0.950); 
-		    animation: transform .25s cubic-bezier(0.445, 0.050, 0.550, 0.950); }	 
+		    animation: transform .25s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+*/ }	 
 		
 		@-webkit-keyframes hamburger-animate {
 			0% {
@@ -261,33 +269,23 @@ nav {
 		}	
 				
 		/* ---- Hamburger to Cross Transition ---- */	
-		#hamburger.open span {
-			-webkit-transform: rotate(0deg);
-			-moz-transform: rotate(0deg);
-			-o-transform: rotate(0deg);
-			transform: rotate(0deg);
-			-webkit-transition: .25s ease-in-out;
-			-moz-transition: .25s ease-in-out;
-			-o-transition: .25s ease-in-out;
-			transition: .25s ease-in-out; }	
-			
-			#hamburger.open span:nth-child(1) {
-				left: 0;
-				width: 0%; }
+		#hamburger.open span:nth-child(1) {
+			left: 0;
+			width: 0%; }
+	
+		#hamburger.open span:nth-child(2) {
+			left: 0;
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg); }
 		
-			#hamburger.open span:nth-child(2) {
-				left: 0;
-				-webkit-transform: rotate(45deg);
-				-moz-transform: rotate(45deg);
-				-o-transform: rotate(45deg);
-				transform: rotate(45deg); }
-			
-			#hamburger.open span:nth-child(3) {
-				left: 0;
-				-webkit-transform: rotate(-45deg);
-				-moz-transform: rotate(-45deg);
-				-o-transform: rotate(-45deg);
-				transform: rotate(-45deg); }
+		#hamburger.open span:nth-child(3) {
+			left: 0;
+			-webkit-transform: rotate(-45deg);
+			-moz-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg);
+			transform: rotate(-45deg); }
 	
 	#menu {
 		margin-top: 35px;
@@ -299,7 +297,8 @@ nav {
 			padding: 0;
 			font-weight: 300;
 			font-size: 0.85em;
-			position: fixed; }
+			position: fixed;
+			display: none; }
 							
 			#menu ul li {	
 				-webkit-transition: transform 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
@@ -342,9 +341,9 @@ nav {
 			transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
 	
 	.active-item {
-		transform: translateX(20px); }
+		font-weight: 400; }
 	
-		.active-item span {
+		.span-active {
 			display: block;
 			border-top: 1px solid #fff;
 			width: 40px;
@@ -354,13 +353,12 @@ nav {
 			margin: 0;
 			padding: 0; }
 
-
 /* fadeInDown and fadeOutUp animations from animate.css 
 	Animate.css - http://daneden.me/animate
 	Licensed under the MIT license - http://opensource.org/licenses/MIT
 	Copyright (c) 2015 Daniel Eden */
 
-.fadeInDown {
+.fadeInDown {	
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;
 	-webkit-animation-duration: 1s;
