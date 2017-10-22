@@ -1,48 +1,14 @@
 $(document).ready(function() {
 	
+	// GLOBAL VARIABLES
 	
-	// ---- NAVIGATION ----
-	
-	// toggle menu when hamburger is clicked	
-	$('#hamburger').click(function(){
-		$(this).toggleClass('open');
-
-		if ($(this).attr('class') == 'open') {
-			$('#menu ul').css('display', 'block');
-			$('#menu ul li a').removeClass('fadeOutUp').addClass('fadeInDown');
-			$('#menu ul li').on('click', function() {
-				$('#menu ul li').removeClass('active-item');
-		        $('#menu ul li').find('span').removeClass('span-active');
-		        $(this).addClass('active-item');
-		        $(this).find('span').addClass('span-active'); })
-		} else {
-			$('#menu ul li a').removeClass('fadeInDown').addClass('fadeOutUp');
-			$('#menu ul').css('display', 'none');
-		}
-	});
-	
-	// hover animations for menu items
-	$(function() {
-		var line, 
-			active,
-			li = $('#menu ul li');
-
-		// on hover, show span line
-		li.bind('mouseover', function() {
-			line = $(this).find('span');
-			line.removeClass('move-line-back').addClass('move-line');
-		});
-	
-		// hide span line	
-		li.bind('mouseleave', function() {	
-			line.addClass('move-line-back').removeClass('move-line');
-		});
-	});
+	var menuLink = $('#menu ul li a');
 	
 
-	// ---- HIDE LANDING PAGE : SHOW HOME PAGE ----
+	// ---- HIDE LANDING PAGE & SHOW HOME PAGE ----
 
-	// if ( window.location.href === "http://laurenschilling.com.au" ) {
+	// if ( window.location.href === "http://laurenschilling.com.au" || window.location.href === "http://laurenschilling.com.au/index.html" ) {
+	
 	if ( window.location.href === "http://localhost:8888/github/portfolio" ) {
 
 		$('#landing img').click(function() {
@@ -59,33 +25,162 @@ $(document).ready(function() {
 		$('#landing').hide();
 		$('#wrapper').show();
 	}
-	
-	// ---- SMOOTH SCROLL TO ID TAGS ----
 
-	$('#menu ul li a').click(function(e) {
-		var thisLink = $(this).attr('href');
-		event.preventDefault();
+
+	// ---- NAVIGATION ----
+
+	$(document).on('scroll', onScroll);
+
+	// TOGGLE MENU when hamburger is clicked	
+	$('#hamburger').click(function(){
+		$(this).toggleClass('open');
 		
-		switch (thisLink) {
-            case '#about': 
-			    $('html, body').animate({
-			        scrollTop: $("#about").offset().top - 50
-			    }, 1000, 'easeInOutCubic'); 
-			    break;			
-			case '#portfolio':
-				$('html, body').animate({
-			        scrollTop: $("#portfolio").offset().top - 20
-			    }, 1000, 'easeInOutCubic');
-			    break;
-			case '#contact':
-				$('html, body').animate({
-			        scrollTop: $("#contact").offset().top
-			    }, 1000, 'easeInOutCubic');
-			    break;
-		} 
+		// if menu is open
+		if ($(this).attr('class') == 'open') {
+			
+			// display menu items
+			$('#menu ul').css('display', 'block');
+			menuLink.removeClass('fadeOutUp').addClass('fadeInDown');
+			
+			// when menu item is clicked
+			menuLink.click(function(e) {
+				
+				// remove all active styles
+				menuLink.removeClass('active-item');
+		        menuLink.find('span').removeClass('span-active');
+		       
+		        // add active style for active item
+		        $(this).addClass('active-item');
+				$(this).find('span').addClass('span-active'); 
+
+				// SMOOTH SCROLL to href value on page
+				var thisLink = $(this).attr('href');
+				event.preventDefault();
+				$(document).off("scroll");
+				
+				switch (thisLink) {
+		            case '#about': 
+					    $('html, body').stop().animate({
+					        scrollTop: $("#about").offset().top - 50
+					    }, 1000, 'easeInOutCubic', function() {
+						    window.location.hash = thisLink;
+				            $(document).on("scroll", onScroll);
+						}); 
+					    break;			
+					case '#portfolio':
+						$('html, body').stop().animate({
+					        scrollTop: $("#portfolio").offset().top - 20
+					    }, 1000, 'easeInOutCubic', function() {
+						    window.location.hash = thisLink;
+				            $(document).on("scroll", onScroll);
+						}); 
+					    break;
+					case '#contact':
+						$('html, body').stop().animate({
+					        scrollTop: $("#contact").offset().top
+					    }, 1000, 'easeInOutCubic', function() {
+						    window.location.hash = thisLink;
+				            $(document).on("scroll", onScroll);
+						}); 
+					    break;
+					default: break;
+				} 	            
+			});
+		
+		// if menu is closed, hide menu items	
+		} else {
+			menuLink.removeClass('fadeInDown').addClass('fadeOutUp');
+			$('#menu ul').css('display', 'none');
+		}
 	});
 	
-// Initialise Isotope	
+	// ADD ACTIVE CLASS based on scroll position
+	function onScroll(event) {
+	    var scrollPos = $(document).scrollTop();
+	    	
+		menuLink.each(function() {
+	        var currLink = $(this);
+	        var refElement = $(currLink.attr('href'));
+	        
+	        // if scroll position is in About or Portfolio sections
+	        if (refElement.position().top - 100 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+
+				// remove all active styles	            
+	            menuLink.removeClass('active-item');
+	            menuLink.find('span').removeClass('span-active');
+
+		        // add active style for current scroll pos item
+	            currLink.addClass('active-item');
+		        currLink.find('span').addClass('span-active'); 
+		    
+		    // else if scroll position is at bottom of page    
+		    } else if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+				// remove all active styles	            
+	        	menuLink.removeClass('active-item');
+				menuLink.find('span').removeClass('span-active');
+
+		        // add active style for contact menu item
+	            $('#contact-item').addClass('active-item');
+		        $('#contact-item').find('span').addClass('span-active'); 
+		
+			// if scroll position is in no section (i.e. top of page)	
+	        } else {
+		        // remove all active styles
+	            currLink.removeClass('active-item');
+	            currLink.find('span').removeClass('span-active'); 
+	        }
+		});
+	}
+    
+	// HOVER ANIMATIONS for menu items
+	$(function() {
+		var line;
+		
+		// on hover, show span line
+		$('#menu ul li').bind('mouseover', function() {
+			line = $(this).find('span');
+			line.removeClass('move-line-back').addClass('move-line');
+		});
+	
+		// on hover leave, hide span line	
+		$('#menu ul li').bind('mouseleave', function() {	
+			line.addClass('move-line-back').removeClass('move-line');
+		});
+	});
+	
+	// BACK TO TOP BUTTON
+	var offset = 900, 	// no of px to scroll before back to top button shows	
+		$top = $('.top');
+
+	// hide or show the back to top button
+	$(window).scroll(function(){
+		( $(this).scrollTop() > offset ) ? $top.addClass('is-visible') : $top.removeClass('is-visible fade-out');
+		if ($(window).scrollTop() + $(window).height() > $(document).height() - 1) {
+			$top.css({'bottom':'50px'});
+		} else {
+			$top.css({'bottom':'25px'});
+		}
+	});
+
+	// smooth scroll to top
+	$top.on('click', function(event){
+		event.preventDefault();
+		$('html, body').animate({
+			scrollTop: 0 ,
+	 	}, 1000, 'easeInOutCubic');
+	});
+
+
+	// ---- PORTFOLIO ITEM HOVER ----
+	$('.grid-item').hover(function() {
+		$(this).find('.grid-title').toggleClass('show');
+	})
+
+	
+	// ---- ISOTOPE PLUGIN ----
+	  	
+	// initialise Isotope	
 	var $grid = $('.grid').isotope({
 		// options
 		itemSelector: '.grid-item',
@@ -99,12 +194,12 @@ $(document).ready(function() {
   		}
 	})
 
-// Layout Isotope after each image loads
+	// layout Isotope after each image loads
 	$grid.imagesLoaded().progress( function() {
 		$grid.isotope('layout');
 	});
 	
-// Filter items on button click
+	// filter items on button click
 	$('.portfolio-filter').on( 'click', 'button', function() {
 		var filterValue = $(this).attr('data-filter');
 		$grid.isotope({ filter: filterValue });
@@ -112,35 +207,32 @@ $(document).ready(function() {
 		$(this).removeClass('inactive').addClass('active');
 	});
 
-// Filter selectors			
+	// filter selectors			
+		// all web items
+		$grid.isotope({ filter: '.web' });
+		
+		// all app items
+		$grid.isotope({ filter: '.apps' });
+		
+		// all commercial items
+		$grid.isotope({ filter: '.commercial' });
+		
+		// all graphics items
+		$grid.isotope({ filter: '.graphics' });
+		
+		// all branding items
+		$grid.isotope({ filter: '.branding' });
+		
+		// all campaign items
+		$grid.isotope({ filter: '.campaigns' });
+		
+		// all accessibility items
+		$grid.isotope({ filter: '.accessibility' });
+		
+		// all print items
+		$grid.isotope({ filter: '.print' });
 	
-	// filter .web items
-	$grid.isotope({ filter: '.web' });
-	
-	// filter .apps items
-	$grid.isotope({ filter: '.apps' });
-	
-	// filter .commercial items
-	$grid.isotope({ filter: '.commercial' });
-	
-	// filter .graphics items
-	$grid.isotope({ filter: '.graphics' });
-	
-	// filter .branding items
-	$grid.isotope({ filter: '.branding' });
-	
-	// filter .campaigns items
-	$grid.isotope({ filter: '.campaigns' });
-	
-	// filter .accessibility items
-	$grid.isotope({ filter: '.accessibility' });
-	
-	// filter .print items
-	$grid.isotope({ filter: '.print' });
-
-	// show all items
-	$grid.isotope({ filter: '*' });
-	
-
+		// all items
+		$grid.isotope({ filter: '*' });
+		
 });	
-	
