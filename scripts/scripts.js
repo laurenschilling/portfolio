@@ -29,6 +29,7 @@ $(document).ready(function() {
 
 	// ---- NAVIGATION ----
 
+		
 	$(document).on('scroll', onScroll);
 
 	// TOGGLE MENU when hamburger is clicked	
@@ -42,50 +43,52 @@ $(document).ready(function() {
 			$('#menu ul').css('display', 'block');
 			menuLink.removeClass('fadeOutUp').addClass('fadeInDown');
 			
-			// when menu item is clicked
-			menuLink.click(function(e) {
-				
-				// remove all active styles
-				menuLink.removeClass('active-item');
-		        menuLink.find('span').removeClass('span-active');
-		       
-		        // add active style for active item
-		        $(this).addClass('active-item');
-				$(this).find('span').addClass('span-active'); 
-
-				// SMOOTH SCROLL to href value on page
-				var thisLink = $(this).attr('href');
-				event.preventDefault();
-				$(document).off("scroll");
-				
-				switch (thisLink) {
-		            case '#about': 
-					    $('html, body').stop().animate({
-					        scrollTop: $("#about").offset().top - 50
-					    }, 1000, 'easeInOutCubic', function() {
-						    window.location.hash = thisLink;
-				            $(document).on("scroll", onScroll);
-						}); 
-					    break;			
-					case '#portfolio':
-						$('html, body').stop().animate({
-					        scrollTop: $("#portfolio").offset().top - 20
-					    }, 1000, 'easeInOutCubic', function() {
-						    window.location.hash = thisLink;
-				            $(document).on("scroll", onScroll);
-						}); 
-					    break;
-					case '#contact':
-						$('html, body').stop().animate({
-					        scrollTop: $("#contact").offset().top
-					    }, 1000, 'easeInOutCubic', function() {
-						    window.location.hash = thisLink;
-				            $(document).on("scroll", onScroll);
-						}); 
-					    break;
-					default: break;
-				} 	            
-			});
+			if (!($('header').hasClass('item-header'))) {
+				// when menu item is clicked
+				menuLink.click(function(e) {
+					
+					// remove all active styles
+					menuLink.removeClass('active-item');
+			        menuLink.find('span').removeClass('span-active');
+			       
+			        // add active style for active item
+			        $(this).addClass('active-item');
+					$(this).find('span').addClass('span-active'); 
+	
+					// SMOOTH SCROLL to href value on page
+					var thisLink = $(this).attr('href');
+					event.preventDefault();
+					$(document).off("scroll");
+					
+					switch (thisLink) {
+			            case '#about': 
+						    $('html, body').stop().animate({
+						        scrollTop: $("#about").offset().top - 50
+						    }, 1000, 'easeInOutCubic', function() {
+							    window.location.hash = thisLink;
+					            $(document).on("scroll", onScroll);
+							}); 
+						    break;			
+						case '#portfolio':
+							$('html, body').stop().animate({
+						        scrollTop: $("#portfolio").offset().top - 20
+						    }, 1000, 'easeInOutCubic', function() {
+							    window.location.hash = thisLink;
+					            $(document).on("scroll", onScroll);
+							}); 
+						    break;
+						case '#contact':
+							$('html, body').stop().animate({
+						        scrollTop: $("#contact").offset().top
+						    }, 1000, 'easeInOutCubic', function() {
+							    window.location.hash = thisLink;
+					            $(document).on("scroll", onScroll);
+							}); 
+						    break;
+						default: break;
+					} 	            
+				});
+			}
 		
 		// if menu is closed, hide menu items	
 		} else {
@@ -96,41 +99,43 @@ $(document).ready(function() {
 	
 	// ADD ACTIVE CLASS based on scroll position
 	function onScroll(event) {
-	    var scrollPos = $(document).scrollTop();
-	    	
-		menuLink.each(function() {
-	        var currLink = $(this);
-	        var refElement = $(currLink.attr('href'));
-	        
-	        // if scroll position is in About or Portfolio sections
-	        if (refElement.position().top - 100 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-
-				// remove all active styles	            
-	            menuLink.removeClass('active-item');
-	            menuLink.find('span').removeClass('span-active');
-
-		        // add active style for current scroll pos item
-	            currLink.addClass('active-item');
-		        currLink.find('span').addClass('span-active'); 
-		    
-		    // else if scroll position is at bottom of page    
-		    } else if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-
-				// remove all active styles	            
-	        	menuLink.removeClass('active-item');
-				menuLink.find('span').removeClass('span-active');
-
-		        // add active style for contact menu item
-	            $('#contact-item').addClass('active-item');
-		        $('#contact-item').find('span').addClass('span-active'); 
-		
-			// if scroll position is in no section (i.e. top of page)	
-	        } else {
-		        // remove all active styles
-	            currLink.removeClass('active-item');
-	            currLink.find('span').removeClass('span-active'); 
-	        }
-		});
+	    if (!($('header').hasClass('item-header'))) {
+			var scrollPos = $(document).scrollTop();
+		    	
+			menuLink.each(function() {
+		        var currLink = $(this);
+		        var refElement = $(currLink.attr('href'));
+		        
+		        // if scroll position is in About or Portfolio sections
+		        if (refElement.position().top - 100 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+	
+					// remove all active styles	            
+		            menuLink.removeClass('active-item');
+		            menuLink.find('span').removeClass('span-active');
+	
+			        // add active style for current scroll pos item
+		            currLink.addClass('active-item');
+			        currLink.find('span').addClass('span-active'); 
+			    
+			    // else if scroll position is at bottom of page    
+			    } else if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+	
+					// remove all active styles	            
+		        	menuLink.removeClass('active-item');
+					menuLink.find('span').removeClass('span-active');
+	
+			        // add active style for contact menu item
+		            $('#contact-item').addClass('active-item');
+			        $('#contact-item').find('span').addClass('span-active'); 
+			
+				// if scroll position is in no section (i.e. top of page)	
+		        } else {
+			        // remove all active styles
+		            currLink.removeClass('active-item');
+		            currLink.find('span').removeClass('span-active'); 
+		        }
+			});
+		} 
 	}
     
 	// HOVER ANIMATIONS for menu items
@@ -176,11 +181,11 @@ $(document).ready(function() {
 	$('.grid-item').hover(function() {
 		$(this).find('.grid-title').toggleClass('show');
 	})
-
+	
 	
 	// ---- ISOTOPE PLUGIN ----
 	  	
-	// initialise Isotope	
+	// initialise isotope	
 	var $grid = $('.grid').isotope({
 		// options
 		itemSelector: '.grid-item',
@@ -194,7 +199,7 @@ $(document).ready(function() {
   		}
 	})
 
-	// layout Isotope after each image loads
+	// layout isotope after each image loads
 	$grid.imagesLoaded().progress( function() {
 		$grid.isotope('layout');
 	});
