@@ -67,12 +67,12 @@ main {
 		border-bottom: #092F25 1px solid; }
 				
 a {
-	color: #fff;
+/* 	color: #fff; */
 	text-decoration: none; }
 	
 	a:hover,
 	a:focus {
-		color: #fff;
+/* 		color: #fff; */
 		text-decoration: underline; }
 	
 
@@ -158,9 +158,11 @@ section ul {
 		list-style: circle outside;
 		display: inline-block; }
 		
+/*
 	.project-desc ul li a, 
 	section ul li a {
  		color: #49625e; }	
+*/
 	
 	.other-skills li {
 		margin-left: 2px; }
@@ -599,6 +601,24 @@ section {
 		#item-main h3 {
 			color: #173c39 !important; 
 		}
+		
+		.files li {
+			background: #f8f8f8;
+			padding: 2px 10px 4px 10px;
+			border-radius: 1px;
+			margin-right: 2px;
+			color: #173c39;
+			transition: ease-in .2s; }
+			
+				.files li:hover,
+				.files li:focus {
+/* 					background: #173c39; */
+					background: #49625e;
+					color: #fff !important; }
+				
+				.files li:hover a:hover,
+				.files li:focus a:focus {	
+					text-decoration: none; }
 	
 .top {
 	display: inline-block;
@@ -1060,8 +1080,7 @@ section {
 	.border {
 		border: .1px solid #092F25; }
 
-.grid-sizer,	
-.grid-item { 
+.grid-sizer { 
 	width: 24%; }
 
 .grid-item {
@@ -1070,12 +1089,19 @@ section {
 	height: auto;
 	z-index: 2; }
 	
-	.grid-sizer--sml,
 	.grid-item--sml {
 		float: left;
-		width: 45%;
+		width: 20%;
 		height: auto;
 		z-index: 2; }
+		
+	.grid-item--big {
+		float: left;
+		width: 40%;
+		height: auto;
+		z-index: 2; }
+		
+		
 
 /* issue with z-index here */
 .grid-title {

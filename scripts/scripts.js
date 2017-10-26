@@ -196,6 +196,7 @@ $(document).ready(function() {
 			columnWidth: '.grid-sizer',
 			gutter: 10,
 			horizontalOrder: true
+// 			fitWidth: true
   		}
 	})
 
