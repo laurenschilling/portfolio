@@ -38,12 +38,17 @@ $(document).ready(function() {
 		
 		// if menu is open
 		if ($(this).attr('class') == 'open') {
-			
+		
+			// if screen is 450px wide or less
+			if ($('header').width() <= 450 && $('main').hasClass('home')){
+				$('#logo').fadeOut();
+			}
+	
 			// display menu items
 			$('#menu ul').css('display', 'block');
 			menuLink.removeClass('fadeOutUp').addClass('fadeInDown');
 			
-			if (!($('header').hasClass('item-header'))) {
+			if (!($('header').hasClass('turn-off'))) {
 				// when menu item is clicked
 				menuLink.click(function(e) {
 					
@@ -60,28 +65,42 @@ $(document).ready(function() {
 					event.preventDefault();
 					$(document).off("scroll");
 					
+					// switch statement used to make sure section h2 is visible on smooth scroll
 					switch (thisLink) {
 			            case '#about': 
-						    $('html, body').stop().animate({
-						        scrollTop: $("#about").offset().top - 50
-						    }, 1000, 'easeInOutCubic', function() {
-							    window.location.hash = thisLink;
-					            $(document).on("scroll", onScroll);
-							}); 
+						    if ($('header').width() <= 450 ){
+							    $('html, body').stop().animate({
+								    scrollTop: $("#about").offset().top - 120
+								    }, 1000, 'easeInOutCubic', function() {
+							            $(document).on("scroll", onScroll);
+									})
+							} else {
+							    $('html, body').stop().animate({
+									scrollTop: $("#about").offset().top - 50
+								    }, 1000, 'easeInOutCubic', function() {
+							            $(document).on("scroll", onScroll);
+									})
+							} 
 						    break;			
 						case '#portfolio':
-							$('html, body').stop().animate({
-						        scrollTop: $("#portfolio").offset().top - 20
-						    }, 1000, 'easeInOutCubic', function() {
-							    window.location.hash = thisLink;
-					            $(document).on("scroll", onScroll);
-							}); 
+							if ($('header').width() <= 450 ){
+								$('html, body').stop().animate({
+							        scrollTop: $("#portfolio").offset().top - 90
+								    }, 1000, 'easeInOutCubic', function() {
+							            $(document).on("scroll", onScroll);
+									})
+							} else {
+								$('html, body').stop().animate({
+							        scrollTop: $("#portfolio").offset().top - 20
+								    }, 1000, 'easeInOutCubic', function() {
+							            $(document).on("scroll", onScroll);
+									})
+							}	
 						    break;
 						case '#contact':
 							$('html, body').stop().animate({
 						        scrollTop: $("#contact").offset().top
 						    }, 1000, 'easeInOutCubic', function() {
-							    window.location.hash = thisLink;
 					            $(document).on("scroll", onScroll);
 							}); 
 						    break;
@@ -94,12 +113,17 @@ $(document).ready(function() {
 		} else {
 			menuLink.removeClass('fadeInDown').addClass('fadeOutUp');
 			$('#menu ul').css('display', 'none');
+			
+			// if screen is 450px wide or less
+			if ($('header').width() <= 450 && $('main').hasClass('home')){
+				$('#logo').fadeIn();
+			}
 		}
 	});
 	
 	// ADD ACTIVE CLASS based on scroll position
 	function onScroll(event) {
-	    if (!($('header').hasClass('item-header'))) {
+	    if (!($('header').hasClass('turn-off'))) {
 			var scrollPos = $(document).scrollTop();
 		    	
 			menuLink.each(function() {
@@ -186,6 +210,24 @@ $(document).ready(function() {
 	// ---- ISOTOPE PLUGIN ----
 	  	
 	// initialise isotope	
+	var $itemGrid = $('.item-grid').isotope({
+		// options
+		itemSelector: '.grid-item',
+		layoutMode: 'masonry',
+		percentPosition: true,
+		masonry: {
+			columnWidth: '.grid-sizer',
+			gutter: 10
+  		}
+	})
+
+	// layout isotope after each image loads
+	$itemGrid.imagesLoaded().progress( function() {
+		$itemGrid.isotope('layout');
+	});
+
+
+	// initialise isotope	
 	var $grid = $('.grid').isotope({
 		// options
 		itemSelector: '.grid-item',
@@ -238,5 +280,33 @@ $(document).ready(function() {
 	
 		// all items
 		$grid.isotope({ filter: '*' });
-		
-});	
+
+
+	// ---- MEDIA QUERY ----
+
+	// if on home page and screen is 450px or smaller
+	$(window).resize(function() {
+		if ($('header').width() <= 450 && $('main').hasClass('home')) {
+	        $('header').addClass('home-header');
+	        $('#logo').find('a').addClass('home-logo');
+	        $('#menu').addClass('home-menu');
+	        $('#rectangle').hide();
+	        $('#menu ul li a').find('span').hide();   
+	        $('#wrapper').css('padding-top','35px');
+	        
+	        if (!($('#menu ul').css('display') == 'none')) {
+		    	$('#logo').hide();
+		    }
+		    
+		} else if ($('header').width() > 450 && $('main').hasClass('home')) {
+			$('header').removeClass('home-header');
+	        $('#logo').find('a').removeClass('home-logo');
+	        $('#menu').removeClass('home-menu');
+	        $('#rectangle').show();
+	        $('#menu ul li a').find('span').show();   
+	        $('#wrapper').css('padding-top','0px');
+	        $('#logo').fadeIn();
+		}
+	})
+
+});
