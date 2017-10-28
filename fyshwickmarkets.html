@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="item">
 <head>
 
 	<!-- Basic Page Needs
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<meta charset="utf-8">
-	<title>Fyshwick Markets Wayfinding Solution – Lauren Schilling.</title>
-	<meta name="description" content="Lauren Schilling, Web Designer.">
+	<title>Fyshwick Markets Wayfinding Solution – Lauren Schilling</title>
+	<meta name="description" content="This wayfinding solution will assist shoppers with finding stores and facilities when visiting the Fyshwick Markets.">
 	<meta name="author" content="Lauren Schilling">
-	
+
 	<!-- Mobile Specific Metas
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,6 +32,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.css">
 	 
 	<!-- Favicon
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -41,214 +42,360 @@
 
 <body>
 	
-	<!-- landing page -->
-    <div id="landing">
-        <p id="move">move arrow keys to play</p>
-        <img src="images/logo-white.png" alt="logo-white" width="800" height="271">
-		<p id="enter">enter site</p>
-	</div>
-    
     <div id="wrapper">
+
     	<!-- Header
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	    <header>
+	    <header class="item-header turn-off">
 	     
 	    	<!-- Logo
 			––––––––––––––––––––––––––––––––––––––––-– -->  
-			<h1 id="logo"><a rel="home" href="index.html" title="Home">Lauren Schilling.</a></h1>
-		  
+			<h1 id="logo"><a class="item-logo" rel="home" href="index.html" title="Home">Lauren Schilling</a></h1>
+
 			<!-- Nav
 			––––––––––––––––––––––––––––––––––––––––-– -->
 		    <nav>
 				<div id="hamburger">
-					<span id="ham1"></span>
-					<span id="ham2"></span>
-					<span id="ham3"></span>
+					<span></span><span></span><span></span>
 			    </div>
 			    
-			    <div id="menu">
-				    <ul id="home-nav">
-					    <li class="nav-item"><span class="line"></span>
-					    	<a class="nav-link" href="about.html">About</a>
+			    <div id="menu" class="item-menu">
+				    <ul>
+					    <li>
+					    	<a href="index.html">Home</a>
 					    </li>
-					    <li class="nav-item active-item"><span class="line"></span>
-					    	<a class="nav-link" href="portfolio.html">Portfolio</a>
+					    <li>
+					    	<a href="index.html#about">About</a>
+					    </li>
+					    <li>
+					    	<a href="index.html#portfolio">Portfolio</a>
 					    </li>		      
-						<li class="nav-item"><span class="line"></span>
-							<a class="nav-link" href="contact.html">Contact</a>
+						<li>
+							<a id="contact-item" href="index.html#contact">Contact</a>
 						</li>
 				    </ul>
 			    </div>
-		    </nav>
-		      
-	    </header>     
-
+		    </nav>		      
+	    </header>        
 
 		<!-- Main Content
 		––––––––––––––––––––––––––––––––––––––––-– -->
-		<main class="u-cf">
-			<div class="portfolio-filter-div">
-				<h2 class="portfolio-h2">Fyshwick Markets Wayfinding Solution</h2>
-					<h3 class="portfolio-h3">Year 4 University Project</h3>
+		<main class="u-cf" id="item-main">
+			<section id="item-intro">
+				<div class="row">
+					<h2>Fyshwick Markets<span class="h2-line"></span></h2>
+					<h3 id="desc">Wayfinding Solution</h3>
+					<h4>Year 4 University Project</h4>	
+<!-- 					<img class="item-img" src="images/set-savethebees2.jpg" alt="set-savethebees" width="1000" height="614"> -->
+					<img class="item-img" src="images/wayfinding8.jpg" alt="Markets Map" width="1000" height="667">
 					
-					<!-- Intro Image -->
-						<img class="portfolio-img" src="images/wayfinding8.jpg" alt="Markets Map" width="1000" height="667">
-
+					<div class="project-desc">
+						<h3 id="h3">The project</h3>					
+						<p>Key to a positive shopping experience is a successful wayfinding system that allows consumers to easily navigate an area and find what they need. The <a href="http://www.fyshwickfreshfoodmarkets.com.au" target="_blank" aria-label="This link is external">Fyshwick Fresh Food Markets’</a> current signage is only visible from the car park. This results in shoppers having difficulty locating stores. This wayfinding solution will assist shoppers with finding stores and facilities. The system uses signage, maps, posters, directional devices and the markets’ branding to help consumers navigate. The system aims to meet the three criteria of navigability. The first is determining one’s location, the second is finding a route to the destination, and the third is using landmarks to build a mental map of the area. The solution uses three wayfinding items – a flyer, map stand and overhead signage – to meet these criteria, and provide shoppers with a favourable experience.</p>
+					</div>
+				</div>
+			</section>
+			
+			<section>
+				<div class="row">			
 					<!-- Project Description -->
 					<div class="project-desc">
-						<h4>The project</h4>
-						<p>Key to a positive shopping experience is a successful wayfinding system that allows consumers to easily navigate an area and find what they need. The <a href="http://www.fyshwickfreshfoodmarkets.com.au" target="_blank" aria-label="This link is external">Fyshwick Fresh Food Markets’</a> current signage is only visible from the car park. This results in shoppers having difficulty locating stores. This wayfinding solution will assist shoppers with finding stores and facilities. The system uses signage, maps, posters, directional devices and the markets’ branding to help consumers navigate. The system aims to meet the three criteria of navigability. The first is determining one’s location, the second is finding a route to the destination, and the third is using landmarks to build a mental map of the area. The solution uses three wayfinding items – a flyer, map stand and overhead signage – to meet these criteria, and provide shoppers with a favourable experience.</p>
-						
-						<h4>See the project files</h4>
-						<p>The wayfinding solution can be found <a class="file-link" target="_blank" aria-label="This link is external" href="https://drive.google.com/file/d/0B6flPbMIjfYRaEpkc25zRlB2aVE/view?usp=sharing">here<i class="fa fa-external-link leave-site" aria-hidden="true"></i></a></p>
-					
-						<h4 class="sneak-peek">A sneak peek of the wayfinding solution</h4>
+						<h3 id="h3" class="sneak-peek">A look at the project</h3>
 					</div>
-						
-					<!-- Image Set -->
-					<div class="row">
-						<div class="grid">
-							<div class="grid-sizer--sml"></div>
-							<div class="grid-item--sml">
-								<a href="images/wayfindingcover.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Map">
-									<img class="grid-img" src="images/wayfindingcover.jpg" alt="Map" width="1000" height="667">
-								</a>
-							</div>
-							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding9.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Folded Map">
-									<img class="grid-img" src="images/wayfinding9.jpg" alt="folded map" width="1000" height="667">
-								</a>
-							</div>
-							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding11.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Map and Shopping Lists">
-									<img class="grid-img" src="images/wayfinding11.jpg" alt="Map" width="1000" height="667">
-								</a>
-							</div>
-							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding12.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Map Close-up">
-									<img class="grid-img" src="images/wayfinding12.jpg" alt="Map" width="1000" height="667">
-								</a>
-							</div>
-							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding10.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Poster">
-									<img class="grid-img" src="images/wayfinding10.jpg" alt="Poster" width="1000" height="667">
 
-								</a>
-							</div>
+					<!-- Image Set -->
+					<div class="item-grid set">
+						<div class="grid-sizer"></div>
 							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding14.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Poster Close-up">
-									<img class="grid-img" src="images/wayfinding14.jpg" alt="Poster" width="1000" height="667">
-								</a>
-							</div>
+						<div class="grid-item">
+							<a href="images/wayfindingcover.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Map">
+								<img class="grid-img" src="images/wayfindingcover.jpg" alt="Map" width="1000" height="667">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding9.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Folded Map">
+								<img class="grid-img" src="images/wayfinding9.jpg" alt="folded map" width="1000" height="667">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding11.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Map and Shopping Lists">
+								<img class="grid-img" src="images/wayfinding11.jpg" alt="Map" width="1000" height="667">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding12.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Map Close-up">
+								<img class="grid-img" src="images/wayfinding12.jpg" alt="Map" width="1000" height="667">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding10.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Poster">
+								<img class="grid-img" src="images/wayfinding10.jpg" alt="Poster" width="1000" height="667">
+
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding14.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Poster Close-up">
+								<img class="grid-img" src="images/wayfinding14.jpg" alt="Poster" width="1000" height="667">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding13.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Poster Close-up">
+								<img class="grid-img" src="images/wayfinding13.jpg" alt="Poster" width="1000" height="667">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding15.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Poster Mockup">
+								<img class="grid-img" src="images/wayfinding15.jpg" alt="Poster Mockup" width="1000" height="667">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding16.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Poster Mockup">
+												<img class="grid-img" src="images/wayfinding16.jpg" alt="Poster Mockup" width="1000" height="667">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding1.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Signage Mockup">
+								<img class="grid-img border" src="images/wayfinding1.jpg" alt="Signage" width="1000" height="707">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding2.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Signage Mockup">
+								<img class="grid-img border" src="images/wayfinding2.jpg" alt="Signage" width="1000" height="707">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/wayfinding3.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Signage Mockup">
+								<img class="grid-img border" src="images/wayfinding3.jpg" alt="Signage" width="1000" height="707">
+							</a>
+						</div>	
+					</div>
+				</div>
+			</section>
+			
+			<section>
+				<div class="row">
+					<h3 id="h3">What's in the report?</h3>						
+					<p>It presents the findings from the audit in a way that applauds the website’s strengths, while clearly and specifically outlining areas for improvement. The report is written persuasively, with the company goals in mind. By implementing best accessibility practices, Airbnb will better serve and retain its users in need of accessible features. This has the potential to greatly increase Airbnb’s revenue and overall profit. Framing the report in this way encourages the company to make the recommended changes.</p>
+
+					<h3 id="h3">View the project files</h3>
+					<ul class="files">
+						<li><a class="file-link" target="_blank" aria-label="This link is external" href="https://drive.google.com/file/d/0B6flPbMIjfYRaEpkc25zRlB2aVE/view?usp=sharing">Wayfinding solution<i class="fa fa-external-link leave-site" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</section>
+		
+			<!-- Portfolio
+			––––––––––––––––––––––––––––––––––––––––-– -->						
+			<section class="u-cf" id="portfolio">
+				<div class="twelve columns portfolio-filter-div">
+					<h2>See my other work<span class="h2-line item-line"></span></h2>
+						
+					<div class="button-group portfolio-filter">
+						<button data-filter="*" class="button item-button active">All</button>
+						<button data-filter=".web" class="button item-button inactive">Web</button>
+						<button data-filter=".print" class="button item-button inactive">Print</button>					
+						<button data-filter=".graphics" class="button item-button inactive">Graphics</button>
+						<button data-filter=".branding" class="button item-button inactive">Branding</button>
+						<button data-filter=".commercial" class="button item-button inactive">Commercial</button>
+						<button data-filter=".campaigns" class="button item-button inactive">Campaigns</button>
+						<button data-filter=".accessibility" class="button item-button inactive">Accessibility</button>
+						<button data-filter=".apps" class="button item-button inactive">Apps</button>
+					</div>
+				</div>
+				
+				<div class="twelve columns">
+					<div class="grid">
+						<div class="grid-sizer"></div>
+						
+						<!-- Fyshwick Markets -->
+						<div class="grid-item graphics branding print commercial">
+							<a href="fyshwickmarkets.html">
+								<div class="grid-title">
+									<p class="title">Fyshwick Markets</p>
+									<p class="subtitle">Wayfinding System</p>
+								</div>
+								<img class="grid-img" src="images/wayfinding8.jpg" alt="wayfinding8" width="1200" height="643">
+							</a>
+						</div>
+	
+						<!-- Shine Hairdressing -->					
+						<div class="grid-item web commercial">
+							<a href="shinehairdressing.html">	
+								<div class="grid-title">
+									<p class="title">Shine Hairdressing</p>
+									<p class="subtitle">Website</p>
+								</div>
+								<img class="grid-img" src="images/mockup-thumb-shine2.jpg" alt="mockup-thumb-shine2" width="700" height="583">
+							</a>
+						</div>
+						
+						<!-- Devoured -->					
+						<div class="grid-item print graphics">
+							<a href="devoured.html">
+								<div class="grid-title">
+									<p class="title">Devoured</p>
+									<p class="subtitle">Data Visualisation</p>
+								</div>
+								<img class="grid-img" src="images/devoured-thumbnail4.gif" alt="devoured-thumbnail4" width="1000" height="705">
+							</a>
+						</div>
 							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding13.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Poster Close-up">
-									<img class="grid-img" src="images/wayfinding13.jpg" alt="Poster" width="1000" height="667">
-								</a>
+						<!-- Jacqui Scott -->					
+						<div class="grid-item commercial web">
+							<a href="jacquiscott.html">	
+								<div class="grid-title">
+									<p class="title">Jacqui Scott</p>
+									<p class="subtitle">Website</p>
+								</div>
+<img class="grid-img" src="images/mockup-thumb-jacqui4.jpg" alt="mockup-thumb-jacqui3" width="700" height="700">
+							</a>
+						</div>
+					
+						<!-- ArtSoundFM -->
+						<div class="grid-item web graphics campaigns accessibility branding">
+							<a href="artsoundfm.html">						
+								<div class="grid-title">
+									<p class="title">ArtSoundFM</p>
+									<p class="subtitle">Website & Brand Redesign</p>
+								</div>
+								<img class="grid-img" src="images/mockup-thumb-artsound-bg.jpg" alt="ArtSoundFM" width="700" height="700">
+							</a>
+						</div>
+						
+						<!-- Airbnb -->
+						<div class="grid-item accessibility commercial">
+							<a href="airbnb.html">
+							<div class="grid-title">
+								<p class="title">Airbnb</p>
+								<p class="subtitle">Accessibility Audit</p>
 							</div>
-							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding15.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Poster Mockup">
-									<img class="grid-img" src="images/wayfinding15.jpg" alt="Poster Mockup" width="1000" height="667">
-								</a>
-							</div>
-							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding16.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Poster Mockup">
-													<img class="grid-img" src="images/wayfinding16.jpg" alt="Poster Mockup" width="1000" height="667">
-								</a>
-							</div>
-							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding1.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Signage Mockup">
-									<img class="grid-img border" src="images/wayfinding1.jpg" alt="Signage" width="1000" height="707">
-								</a>
-							</div>
-							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding2.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Signage Mockup">
-									<img class="grid-img border" src="images/wayfinding2.jpg" alt="Signage" width="1000" height="707">
-								</a>
-							</div>
-							
-							<div class="grid-item--sml">
-								<a href="images/wayfinding3.jpg" data-fancybox="wayfinding-gallery" data-type="image" data-caption="Fyshwick Markets Wayfinding – Signage Mockup">
-									<img class="grid-img border" src="images/wayfinding3.jpg" alt="Signage" width="1000" height="707">
-								</a>
-							</div>	
+							<img class="grid-img"src="images/mockup-thumb-airbnb3.jpg" alt="mockup-thumb-airbnb3" width="700" height="834">
+							</a>
+						</div>
+						
+						<!-- Portrait Play -->
+						<div class="grid-item campaigns graphics web branding apps">
+							<a href="portraitplay.html">	
+	 							<div class="grid-title">
+									<p class="title">Portrait Play</p>
+									<p class="subtitle">Interactive Web App</p>
+								</div>
+								<img class="grid-img" src="images/mockup-thumb-npg.jpg" alt="mockup-thumb-npg" width="700" height="486">
+						</div>
+	
+						<!-- UC Magic -->					
+						<div class="grid-item web apps graphics">
+							<a href="ucmagic.html">						
+								<div class="grid-title">
+									<p class="title">UC Magic</p>
+									<p class="subtitle">UI App Design</p>
+								</div>
+								<img class="grid-img" src="images/mockup-thumb-ucmagic6.jpg" alt="mockup-thumb-ucmagic6" width="700" height="478">
+							</a>
+						</div>
+						
+						<!-- Weather API Sketch -->
+						<div class="grid-item graphics apps web">
+							<a href="">	
+								<div class="grid-title">
+									<p class="title">Weather</p>
+									<p class="subtitle">API Sketch</p>
+								</div>
+								<img class="grid-img" src="images/mockup-thumb-weather5.jpg" alt="mockup-thumb-weather" width="700" height="490">
+							</a>
+						</div>
+						
+						<!-- Moo's Food -->
+						<div class="grid-item web graphics branding">
+							<a href="moosfood.html">	
+								<div class="grid-title">
+									<p class="title">Moo’s Food</p>
+									<p class="subtitle">Blog</p>
+								</div>
+								<img class="grid-img" src="images/mockup-thumb-moo1.jpg" alt="mockup-thumb-moo1" width="700" height="384">
+							</a>
+						</div>
+						
+						<!-- Save the Bees -->
+						<div class="grid-item branding campaigns graphics print web">
+							<a href="savethebees.html">	
+								<div class="grid-title">
+									<p class="title">Save the Bees</p>
+									<p class="subtitle">Cross Media Campaign</p>
+								</div>
+								<img class="grid-img" src="images/savebees12.jpg" alt="savebees12" width="1500" height="1125">
+							</a>
+						</div>
+						
+						<!-- Frankenstein -->					
+						<div class="grid-item web print graphics">
+							<a href="frankenstein.html">
+								<div class="grid-title">
+									<p class="title">Frankenstein</p>
+									<p class="subtitle">Publication Design</p>
+								</div>
+								<img class="grid-img" src="images/frank-thumbnail3.jpg" alt="Frankenstein" width="700" height="467">
+							</a>
 						</div>
 					</div>
-			</div>
-		</main>	  
-	
-		<div class="push"></div>
-	</div> <!-- end .container -->	  
-		 
-	<!-- Footer
-	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <footer class="footer">
-	    <div id="contain-footer">
-		    <div id="copyright">
-				<ul>
-					<li>
-					    <a href="index.html">Lauren Schilling. 2017</a>
-					</li>
-				</ul>
-			</div>
-	    
-		    <div class="social-links">
-			    <ul class="social">
-				    <li><a href="https://www.linkedin.com/in/laurenschilling/" target="_blank" aria-label="LinkedIn">
-					    	<i class="fa fa-linkedin" aria-hidden="true"></i>
-						</a></li>
-				    <li><a href="https://www.instagram.com/lhbs_/" target="_blank" aria-label="Instagram">
-					    	<i class="fa fa-instagram" aria-hidden="true"></i>
-						</a></li>
-				    <li><a href="https://www.facebook.com/laurenhschilling" target="_blank" aria-label="Facebook">
-					    	<i class="fa fa-facebook-square" aria-hidden="true"></i>
-						</a></li>
-				    <li><a href="https://au.pinterest.com/foxanaut/" target="_blank" aria-label="Pinterest">
-					    	<i class="fa fa-pinterest-p" aria-hidden="true"></i>
-						</a></li>
-			    </ul>
-		    </div>
-	    </div> <!-- end #contain-footer -->
-    </footer>
+				</div>
+			</section>
+		
+			<a href="#0" class="top">Back to Top</a>
+		</main>	 
   
+		 
+		<!-- Footer
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	    <footer class="footer" id="item-footer">
+		    <div id="contain-footer">
+			    <div id="copyright">
+					<ul>
+						<li>
+						    <a id="item-copy" href="index.html">Lauren Schilling 2017</a>
+						</li>
+					</ul>
+				</div>
+		    
+			    <div class="social-links">
+				    <ul class="social" id="item-social">
+					    <li><a href="https://www.linkedin.com/in/laurenschilling/" target="_blank" aria-label="LinkedIn">
+						    	<i class="fa fa-linkedin" aria-hidden="true"></i>
+							</a></li>
+					    <li><a href="https://www.instagram.com/lhbs_/" target="_blank" aria-label="Instagram">
+						    	<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a></li>
+					    <li><a href="https://www.facebook.com/laurenhschilling" target="_blank" aria-label="Facebook">
+						    	<i class="fa fa-facebook-square" aria-hidden="true"></i>
+							</a></li>
+					    <li><a href="https://au.pinterest.com/foxanaut/" target="_blank" aria-label="Pinterest">
+						    	<i class="fa fa-pinterest-p" aria-hidden="true"></i>
+							</a></li>
+				    </ul>
+			    </div>
+		    </div>
+	    </footer>
+	</div> <!-- end #wrapper -->
   
 <!-- Scripts
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <script src="scripts/jquery.js"></script> 
+<script src="scripts/scripts.js"></script> 
 <script src="scripts/isotope.pkgd.min.js"></script>
-<script src="scripts/imagesloaded.pkgd.min.js"></script>
+<script src="scripts/imagesloaded.pkgd.min.js"></script> 
 <script src="scripts/jquery.fancybox.min.js"></script>
-<script>
-	// Initialise Isotope	
-	var $grid = $('.grid').isotope({
-		// options
-		itemSelector: '.grid-item--sml',
-		layoutMode: 'masonry',
-		percentPosition: true,
-		masonry: {
-			// use element for option
-			columnWidth: '.grid-sizer--sml',
-			gutter: 10,
-			horizontalOrder: true
-  		}
-	})
-	
-	// Layout Isotope after each image loads
-	$grid.imagesLoaded().progress( function() {
-		$grid.isotope('layout');
-	});	
-</script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
-<!-- End Document
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>

@@ -8,6 +8,7 @@ $(document).ready(function() {
 	// ---- HIDE LANDING PAGE & SHOW HOME PAGE ----
 
 	// if ( window.location.href === "http://laurenschilling.com.au" || window.location.href === "http://laurenschilling.com.au/index.html" ) {
+/*
 	
 	if ( window.location.href === "http://localhost:8888/github/portfolio" ) {
 
@@ -25,6 +26,7 @@ $(document).ready(function() {
 		$('#landing').hide();
 		$('#wrapper').show();
 	}
+*/
 
 
 	// ---- NAVIGATION ----
@@ -294,6 +296,7 @@ $(document).ready(function() {
 	        $('#menu ul li a').find('span').hide();   
 	        $('#wrapper').css('padding-top','35px');
 	        
+	        // if the menu items are visible, hide logo
 	        if (!($('#menu ul').css('display') == 'none')) {
 		    	$('#logo').hide();
 		    }
