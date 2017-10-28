@@ -192,11 +192,9 @@ $(document).ready(function() {
 		layoutMode: 'masonry',
 		percentPosition: true,
 		masonry: {
-			// use element for option
 			columnWidth: '.grid-sizer',
 			gutter: 10,
 			horizontalOrder: true
-// 			fitWidth: true
   		}
 	})
 

@@ -53,26 +53,34 @@ main {
 	margin: 0 auto;
 	margin-top: 7%; }
 	
+	#home {
+		margin-top: 60px; }
+		
 	#item-main {
-/* 		width: 100%; */
 		margin: 0 auto;
 		margin-top: 60px; /* height of header */
 		padding-top: 100px;	}
-	
 
-	#item-main h2 {
-		color: #092F25;	}
-		
-	#item-main .h2-line {
-		border-bottom: #092F25 1px solid; }
+		#item-main h2 {
+			color: #092F25;	}
+			
+		#item-main .h2-line {
+			border-bottom: #092F25 1px solid; }
+			
+		#item-main .item-line {
+			width: 200%;
+			transform: translateX(-40%); }
+			
+		#h3 {
+			font-size: 1.1em;
+			letter-spacing: 0.01em;	}
 				
 a {
-/* 	color: #fff; */
-	text-decoration: none; }
+	text-decoration: none;
+	color: #cd6c7f; }
 	
 	a:hover,
 	a:focus {
-/* 		color: #fff; */
 		text-decoration: underline; }
 	
 
@@ -148,28 +156,15 @@ a {
 .project-desc ul, 
 section ul {
 	padding-left: 0;
-	margin-top: .5em;
+	margin-top: 1em;
 	color: #092F25; }
 	
 	.project-desc ul li, 
 	section ul li {
-/* 		margin-left: 1.35em;; */
 		margin-bottom: .4rem;
 		list-style: circle outside;
 		display: inline-block; }
 		
-/*
-	.project-desc ul li a, 
-	section ul li a {
- 		color: #49625e; }	
-*/
-	
-	.other-skills li {
-		margin-left: 2px; }
-	
-	.skills ul li {
-		list-style: none; }		
-	
 	.project-desc ul li:last-child {
 		margin-bottom: 1.5em; }
 		
@@ -367,6 +362,34 @@ nav {
 					#menu ul li:nth-child(3) a {
 						-webkit-animation-delay: .2s;
 						animation-delay: .2s; }
+			
+			.item-menu {
+				margin-top: 0 !important;
+				width: auto !important;
+				display: inline-block;
+				margin: 0 0 15px 40px; }
+			
+				.item-menu ul {
+					display: inline-block !important;
+					position: relative !important;
+					top: -4px; }
+					
+					.item-menu ul li {
+						display: inline-block;
+						padding-right: 10px; }
+						
+						.item-menu ul li:hover,
+						.item-menu ul li:focus {
+							font-weight: 400;
+							transform: none !important;
+							animation-delay: none !important; }
+						
+						.item-menu ul li a {	
+							-webkit-transition: transform 200ms ease !important; 
+							-moz-transition: transform 200ms ease !important; 
+						    -o-transition: transform 200ms ease !important; 
+						    transition: transform 200ms ease !important;
+						    animation-delay: none !important; }
 					            
 	.line {
 		display: block;
@@ -578,7 +601,10 @@ section {
 		margin-bottom: .3em;
 	}
 	
-	#item-intro h3,
+	#item-main section:not(:last-of-type) {
+		margin-bottom: 8%;	}
+	
+	#desc,
 	#item-intro h4 {
 		font-family: "sofia-pro", "poppins", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
@@ -589,36 +615,38 @@ section {
 		
 		#item-intro h4 {
 			text-transform: none;
-			margin-bottom: 3em;
-		}
+			margin-bottom: 3em; }
 		
 		.item-img {
 			width: 55%;
 			height: auto;
-			float: right;
-		}
+			float: right; }
 		
 		#item-main h3 {
-			color: #173c39 !important; 
-		}
+			color: #173c39 !important; }
+		
+		.trailer {
+			padding-bottom: 10px; }
 		
 		.files li {
 			background: #f8f8f8;
 			padding: 2px 10px 4px 10px;
 			border-radius: 1px;
 			margin-right: 2px;
-			color: #173c39;
 			transition: ease-in .2s; }
 			
 				.files li:hover,
 				.files li:focus {
-/* 					background: #173c39; */
 					background: #49625e;
 					color: #fff !important; }
 				
+				.files li a {
+					color: #173c39; }
+					
 				.files li:hover a:hover,
 				.files li:focus a:focus {	
-					text-decoration: none; }
+					text-decoration: none;
+					color: #fff; }
 	
 .top {
 	display: inline-block;
@@ -795,11 +823,11 @@ section {
 
 	.project-desc a {
 		text-decoration: underline;
-		color: #3cb38f; } /*  #EEC7B4*/
+		color: #3cb38f; } 
 		
 		.project-desc a:hover,
 		.project-desc a:focus {
-			color: #2D8067; } /* #ff4900 ff6363 #ea7b7d*/
+			color: #2D8067; } 
 	
 .button {
 	display: inline-block;
@@ -822,6 +850,9 @@ section {
 	.inactive {
 		opacity: .5;
 		transition: 0.4s; }
+	
+	.item-button {
+		color: #173c39; }
 		
 .leave-site {
 	padding-left: .5em;
@@ -915,6 +946,9 @@ section {
 
 #contact {
 	margin-bottom: 15%; }
+	
+	#contact a {
+		color: #fff;	}
 
 .contact {
 	padding-right: 2%; }
@@ -1091,18 +1125,17 @@ section {
 	
 	.grid-item--sml {
 		float: left;
-		width: 20%;
+		width: 24%;
 		height: auto;
 		z-index: 2; }
 		
 	.grid-item--big {
 		float: left;
-		width: 40%;
+		width: 49%;
 		height: auto;
 		z-index: 2; }
 		
 		
-
 /* issue with z-index here */
 .grid-title {
 	display: none;
@@ -1128,103 +1161,3 @@ section {
 	
 	.show {
 		display: block; }
-
-
-/* Forms
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-	
-/*
-.form-div {
-	margin-bottom: 15%;
-	display: block; }
-
-.form,
-.contact-form {
-  float: left;
-  text-align: left;
-  width: 100%;
-  display: block; }
-  
-	.form.is-hidden,
-	.contact-form.is-hidden {
-	    display: none; }
-     
-.form-label {
-	float: left; 
-	width: 100%;
-	margin-bottom: 0;
-	line-height: 2em; }
-
-.form-input,
-.form-textarea {
-	font-size: 1em;
-	float: left;
-	width: 100%;
-	padding: 5px 0.4em;
-	border: 1px solid #dadada;
-	margin-bottom: 0.8em;
-	outline: none;
-	line-height: 1em; }
-
-	.form-input.is-error {
-	    border-color: #f98686; }
-	    
-	.form-textarea {
-		min-height: 80px;
-		max-height: 300px;
-		max-width: 100%; }
-
-.form-button,
-.form-response {
-	background: #092F25;
-	border: 1px solid #092F25;
-	color: #fff;
-	float: left;
-	font-size: 1em;
-	font-weight: 400;
-	letter-spacing: 0.025em;
-	line-height: 1.5em;
-	outline: none;
-	padding: 0.2em 0.8em 0.3em;
-	text-align: center;
-	text-decoration: none;
-	width: 100%; }
-
-	.form-button.is-hidden,
-	.form-response.is-hidden {
-	    display: none; }
-
-	.form-button {
-		margin: 0.8em 0 0 0; }
-	
-		.form-button:disabled {
-		    cursor: not-allowed;
-		    color: #d9d9d9; }
-	
-		.form-button--transparent {
-			background-color: transparent;
-			border-color: transparent;
-			color: #000; }
-			
-		.form-button:hover,
-		.form-button:focus {
-			background: #2D8067; 
-			border: solid 1px #2D8067; }	
-
-.form--search {
-	border-bottom: 1px solid #dadada; }
-
-	.form--search .form-input {
-		width: 80%;
-		border: none;
-		margin-bottom: 0;
-		padding: 0; }
-	
-	.form--search .form-button {
-		width: 20%;
-		line-height: 1em;
-		margin: 0;
-		text-align: right;
-		font-size: 1em;
-		font-weight: normal; }
-*/
