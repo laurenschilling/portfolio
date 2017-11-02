@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="item">
 <head>
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -14,10 +14,10 @@
 	<!-- Basic Page Needs
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<meta charset="utf-8">
-	<title>Lauren Schilling</title>
-	<meta name="description" content="Lauren Schilling, Web Designer.">
+	<title>Filmography – Lauren Schilling</title>
+	<meta name="description" content="">			
 	<meta name="author" content="Lauren Schilling">
-	
+
 	<!-- Mobile Specific Metas
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,6 +41,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.css">
 	 
 	<!-- Favicon
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -50,24 +51,16 @@
 
 <body>
 	
-    <!-- Landing Page
-	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div id="landing">
-        <p id="move">move arrow keys to play</p>
-        <img src="images/logo-white.png" alt="logo-white" width="800" height="271">
-		<p id="enter">enter site</p>
-	</div>
-    
     <div id="wrapper">
-	    
+
     	<!-- Header
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	    <header>
+	    <header class="item-header turn-off">
 	     
 	    	<!-- Logo
 			––––––––––––––––––––––––––––––––––––––––-– -->  
-			<h1 id="logo"><a rel="home" href="index.html" title="Home">Lauren Schilling.</a></h1>
-		  
+			<h1 id="logo"><a class="item-logo" rel="home" href="index.html" title="Home">Lauren Schilling</a></h1>
+
 			<!-- Nav
 			––––––––––––––––––––––––––––––––––––––––-– -->
 		    <nav>
@@ -75,100 +68,123 @@
 					<span></span><span></span><span></span>
 			    </div>
 			    
-			    <div id="menu">
-				    <div id="rectangle"></div>
+			    <div id="menu" class="item-menu">
 				    <ul>
 					    <li>
-					    	<a href="#about"><span class="line"></span>About</a>
+					    	<a href="index.html">Home</a>
 					    </li>
 					    <li>
-					    	<a href="#portfolio"><span class="line"></span>Portfolio</a>
+					    	<a href="index.html#about">About</a>
+					    </li>
+					    <li>
+					    	<a href="index.html#portfolio">Portfolio</a>
 					    </li>		      
 						<li>
-							<a id="contact-item" href="#contact"><span class="line"></span>Contact</a>
+							<a id="contact-item" href="index.html#contact">Contact</a>
 						</li>
 				    </ul>
 			    </div>
 		    </nav>		      
-	    </header>      
-		        
-		<!-- Main Content
+	    </header>   
+	    
+	    <!-- Main Content
 		––––––––––––––––––––––––––––––––––––––––-– -->
-		<main class="u-cf home">
+		<main class="u-cf" id="item-main">
+			<section id="item-intro">
+				<div class="row">
+					<h2>Filmography<span class="h2-line"></span></h2>
+					<h3 id="desc">Interactive Film Database</h3>
+					<h4>Year 4 University Project</h4>	
+					<img class="item-img" src="images/set-savethebees2.jpg" alt="set-savethebees" width="1000" height="614">
+<!-- 						<img class="portfolio-img" src="images/ucmagic8.jpg" alt="ucmagic8" width="1500" height="1019"> -->
+					
+					<div class="project-desc">
+						<h3 id="h3">The project</h3>					
+						<p>The academic success of a student is often based on the strength of their support network. This project required the development of an app for University of Canberra students, and needed to support them throughout their first year of study. The app prototype ‘UC Magic,’ addresses the difficulties faced by off-campus students. These students have limited exposure to the university community and may not form friendships as easily as their on-campus peers. The prototype allows students to engage in open, inclusive conversations. These conversations can range from finding a study group to making friends and social events. Without needing an invitation or have existing connections, off-campus students can bypass the challenging social environment they face. They’re able to engage with the community by forming positive connections online. These connections then develop into supportive friendships through meet‑ups and face-to-face conversations. The goal of the product is to provide students with the ability to easily build their own support network.</p>
+					</div>
+				</div>
+			</section>	 
 			
-			<!-- Intro
-			––––––––––––––––––––––––––––––––––––––––-– -->			
-			<section id="intro">
-				<div class="row">
-					<h2>Welcome<span class="h2-line"></span></h2>
-					<p class="big">Hi, I'm Lauren, a web designer based in Canberra, Australia.</p> 
-					<p class="big">I do user interface design and front end development, plus graphic design.</p>
-					<p>I'm skilled in: </p>
-					<ul class="skills">
-						<li>HTML 5</li>
-						<li>CSS 3</li>
-						<li>JavaScript</li>
-						<li>jQuery</li>
-						<li>PixiJS</li>
-						<li>Coda 2</li>
-						<li>Photoshop</li>
-						<li>Illustrator</li>
-						<li>InDesign</li>
-						<li>Premiere Pro</li>
-						<li>Scrum Framework</li>
-						<li>WCAG 2.0</li>
-						<li>User Interface Design</li>
-						<li>GitHub</li>
-						<li>Using APIs</li>
-					</ul>
-					<div class="see-work-wrap">
-						<div id="rect"></div>
-						<p class="see-work"><a href="#portfolio"><span class="line" id="see-line"></span>See my work</a></p>
+			<section>
+				<div class="row">			
+					<!-- Project Description -->
+					<div class="project-desc">
+						<h3 id="h3" class="sneak-peek">Info pack design</h3>
 					</div>
-				</div>
-			</section>
 
-
-			<!-- About
-			––––––––––––––––––––––––––––––––––––––––-– -->			
-			<section id="about">
-				<div class="row">
-					<h2>About<span class="h2-line"></span></h2>
-					<div id="about-img-wrapper">
-						<img id="about-img" src="images/portrait2.jpg" alt="Self Portrait" width="960" height="720">
-					</div>
-						
-					<div class="about">
-						<h3>Who am I?</h3>
-						<p>My name is Lauren Schilling, and I design for web, digital and print platforms. I live in Canberra, Australia, and appreciate all things design – from print publications to typography, branding, virtual reality and of course, the web. I’m in my fourth and final year at the University of Canberra, where I’m studying Web Design and Production. I’m tiny but I think big, and love working on great projects with great teams. </p>
-						<h3>What can I do?</h3>
-						<p>I love to create positive, immersive web experiences. I’m skilled in semantic HTML, CSS, JavaScript and jQuery. Key to this is creating accessible sites for all users, and I have a working knowledge of the Web Content Accessibility Guidelines. I also design graphics, digital and print publications, and brand identities. I’m skilled in Photoshop, Illustrator and InDesign. In addition to university projects, I’ve designed websites for clients, using client-friendly software and templates such as WordPress and Squarespace.
+					<!-- Image Set -->
+					<div class="item-grid set">
+						<div class="grid-sizer"></div>
 							
-							Website design, Graphic design, Layout design, Proof reading, Editing copy, Typesetting, Design process, Idea iteration, Proposal writing, Data visualisation </p>
-						<h3>Where do I want to be?</h3>
-						<p>Great design is in the details. I’m thorough and organised in my projects. I’m able to work independently and with teams. I welcome a challenge. I enjoy researching, brainstorming, trialling and working with others to collaboratively problem solve. </p>
-						<h3>What do I love?</h3>
-						<p>I would like to work in a design studio where I can learn from industry leaders, contribute to projects and further develop my skills. There are so many aspects of design, and I would value the opportunity to explore as many disciplines as possible throughout my career. While I’m based in Canberra (with its exceptional cultural institutions, hip bars and warming eats), I’m keen to explore other cities by working further afield. </p>
+						<div class="grid-item">
+							<a href="images/ucmagic7.jpg" data-fancybox="ucmagic-gallery" data-type="image" data-caption="UC Magic Design Iterations – Methods and Methodology">
+								<img class="grid-img border" src="images/ucmagic7.jpg" alt="Methods and Methodology" width="1000" height="707">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/ucmagic1.jpg" data-fancybox="ucmagic-gallery" data-type="image" data-caption="UC Magic Design Iterations – Entry and Exit Screens">
+								<img class="grid-img border" src="images/ucmagic1.jpg" alt="Entry and Exit Screens" width="1000" height="707">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/ucmagic2.jpg" data-fancybox="ucmagic-gallery" data-type="image" data-caption="UC Magic Design Iterations – Onboard Screens">
+								<img class="grid-img border" src="images/ucmagic2.jpg" alt="Onboard Screens" width="1000" height="707">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/ucmagic3.jpg" data-fancybox="ucmagic-gallery" data-type="image" data-caption="UC Magic Design Iterations – Visual Comparison to Existing UC App">
+								<img class="grid-img border" src="images/ucmagic3.jpg" alt="Visual Comparison" width="1000" height="707">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/ucmagic5.jpg" data-fancybox="ucmagic-gallery" data-type="image" data-caption="UC Magic Design Iterations – Various Iterations">
+								<img class="grid-img border" src="images/ucmagic5.jpg" alt="Various Iterations" width="1000" height="707">
+							</a>
+						</div>
+						
+						<div class="grid-item">
+							<a href="images/ucmagic6.jpg" data-fancybox="ucmagic-gallery" data-type="image" data-caption="UC Magic Design Iterations – Final Wireframes">
+								<img class="grid-img border" src="images/ucmagic6.jpg" alt="Final Wireframes" width="1000" height="707">
+							</a>
+						</div>
 					</div>
 				</div>
 			</section>
+			
+			<section>
+				<div class="row">
+					<h3 id="h3">The team</h3>						
+					<p>This project was completed as a team. I was the project manager, designed the website, info packs and seed packs, coordinated social media and created the documentation. My team members developed storyboards for the VR simulation, created the trailer and also contributed to the documentation. We were invited by the university to present our project at <a href="https://www.eventbrite.com/e/scanz2017-cbr-tickets-34226170397?aff=es2" target="_blank" aria-label="This link is external">SCANZ2017</a>, an event that focuses on environmental issues and how positive action can be implemented on a larger community scale.</p>
 
+					<h3 id="h3">View the project files</h3>
+					<ul class="files">
+						<li><a class="file-link" target="_blank" aria-label="This link is external" href="https://invis.io/k675thony">Prototype<i class="fa fa-external-link leave-site" aria-hidden="true"></i></a></li>
+						<li><a class="file-link" target="_blank" aria-label="This link is external" href="https://drive.google.com/file/d/0B6flPbMIjfYRLVF5MnBSQUZrRGc/view?usp=sharing">Final documentation<i class="fa fa-external-link leave-site" aria-hidden="true"></i></a></li>
+						<li><a class="file-link" target="_blank" aria-label="This link is external" href="https://drive.google.com/file/d/0B6flPbMIjfYRQ1g3MlBENklna28/view?usp=sharing">Initial research report<i class="fa fa-external-link leave-site" aria-hidden="true"></i></a></li> 
+					</ul>
+				</div>
+			</section>  
+			
 			<!-- Portfolio
 			––––––––––––––––––––––––––––––––––––––––-– -->						
 			<section class="u-cf" id="portfolio">
 				<div class="twelve columns portfolio-filter-div">
-					<h2>Portfolio<span class="h2-line"></span></h2>
+					<h2>See my other work<span class="h2-line item-line"></span></h2>
 						
 					<div class="button-group portfolio-filter">
-						<button data-filter="*" class="button active">All</button>
-						<button data-filter=".web" class="button inactive">Web</button>
-						<button data-filter=".print" class="button inactive">Print</button>					
-						<button data-filter=".graphics" class="button inactive">Graphics</button>
-						<button data-filter=".branding" class="button inactive">Branding</button>
-						<button data-filter=".commercial" class="button inactive">Commercial</button>
-						<button data-filter=".campaigns" class="button inactive">Campaigns</button>
-						<button data-filter=".accessibility" class="button inactive">Accessibility</button>
-						<button data-filter=".apps" class="button inactive">Apps</button>
+						<button data-filter="*" class="button item-button active">All</button>
+						<button data-filter=".web" class="button item-button inactive">Web</button>
+						<button data-filter=".print" class="button item-button inactive">Print</button>					
+						<button data-filter=".graphics" class="button item-button inactive">Graphics</button>
+						<button data-filter=".branding" class="button item-button inactive">Branding</button>
+						<button data-filter=".commercial" class="button item-button inactive">Commercial</button>
+						<button data-filter=".campaigns" class="button item-button inactive">Campaigns</button>
+						<button data-filter=".accessibility" class="button item-button inactive">Accessibility</button>
+						<button data-filter=".apps" class="button item-button inactive">Apps</button>
 					</div>
 				</div>
 				
@@ -284,6 +300,7 @@
 								<img class="grid-img" src="images/mockup-thumb-moo1.jpg" alt="mockup-thumb-moo1" width="700" height="384">
 							</a>
 						</div>
+						
 						<!-- Save the Bees -->
 						<div class="grid-item branding campaigns graphics print web">
 							<a href="savethebees.html">	
@@ -308,80 +325,50 @@
 					</div>
 				</div>
 			</section>
-
-			<!-- Contact
-			––––––––––––––––––––––––––––––––––––––––-– -->						
-			<section id="contact">
-				<div class="row">
-					<div class="twelve columns">
-						<h2>Say hello<span class="h2-line"></span></h2>
-						<p>Let’s be friends! If you’d like to work with me, get in touch at <a href="mailto:laurenschilling@me.com">laurenschilling@me.com.</a></p>
-						
-						<div class="contact-details">
-							<p class="bold no-margin">Find me on</p>
-							<div class="contact-social-links">
-								<ul class="contact-social">
-								    <li><a href="https://www.linkedin.com/in/laurenschilling/" target="_blank" aria-label="LinkedIn">
-									    <i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								    <li><a href="https://www.instagram.com/lhbs_/" target="_blank" aria-label="Instagram">
-								    	<i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								    <li><a href="https://www.facebook.com/laurenhschilling" target="_blank" aria-label="Facebook">
-								    	<i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-								    <li><a href="https://au.pinterest.com/foxanaut/" target="_blank" aria-label="Pinterest">
-									    <i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-									<li><a href="mailto:laurenschilling@me.com" target="_blank" aria-label="Email">
-										<i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-							    </ul>
-					    	</div>
-						</div>
-					</div>
-			</section>	
-			
+		
 			<a href="#0" class="top">Back to Top</a>
-		</main>	  
+		</main>	 
 			 
-	<!-- Footer
-	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <footer class="footer">
-	    <div id="contain-footer">
-		    <div id="copyright">
-				<ul>
-					<li>
-					    <a href="index.html">Lauren Schilling. 2017</a>
-					</li>
-				</ul>
-			</div>
-	    
-		    <div class="social-links">
-			    <ul class="social">
-				    <li><a href="https://www.linkedin.com/in/laurenschilling/" target="_blank" aria-label="LinkedIn">
-					    	<i class="fa fa-linkedin" aria-hidden="true"></i>
-						</a></li>
-				    <li><a href="https://www.instagram.com/lhbs_/" target="_blank" aria-label="Instagram">
-					    	<i class="fa fa-instagram" aria-hidden="true"></i>
-						</a></li>
-				    <li><a href="https://www.facebook.com/laurenhschilling" target="_blank" aria-label="Facebook">
-					    	<i class="fa fa-facebook-square" aria-hidden="true"></i>
-						</a></li>
-				    <li><a href="https://au.pinterest.com/foxanaut/" target="_blank" aria-label="Pinterest">
-					    	<i class="fa fa-pinterest-p" aria-hidden="true"></i>
-						</a></li>
-			    </ul>
+		<!-- Footer
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	    <footer class="footer" id="item-footer">
+		    <div id="contain-footer">
+			    <div id="copyright">
+					<ul>
+						<li>
+						    <a id="item-copy" href="index.html">Lauren Schilling 2017</a>
+						</li>
+					</ul>
+				</div>
+		    
+			    <div class="social-links">
+				    <ul class="social" id="item-social">
+					    <li><a href="https://www.linkedin.com/in/laurenschilling/" target="_blank" aria-label="LinkedIn">
+						    	<i class="fa fa-linkedin" aria-hidden="true"></i>
+							</a></li>
+					    <li><a href="https://www.instagram.com/lhbs_/" target="_blank" aria-label="Instagram">
+						    	<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a></li>
+					    <li><a href="https://www.facebook.com/laurenhschilling" target="_blank" aria-label="Facebook">
+						    	<i class="fa fa-facebook-square" aria-hidden="true"></i>
+							</a></li>
+					    <li><a href="https://au.pinterest.com/foxanaut/" target="_blank" aria-label="Pinterest">
+						    	<i class="fa fa-pinterest-p" aria-hidden="true"></i>
+							</a></li>
+				    </ul>
+			    </div>
 		    </div>
-	    </div> <!-- end #contain-footer -->
-    </footer>
-    </div> <!-- end #wrapper -->
-    
-	<!-- Scripts
-	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <script src="scripts/jquery.js"></script> 
-	<script src="scripts/scripts.js"></script> 
-	<script src="scripts/isotope.pkgd.min.js"></script>
-	<script src="scripts/imagesloaded.pkgd.min.js"></script> 
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-   
-
-<!-- End Document
+	    </footer>
+	</div> <!-- end #wrapper -->
+  
+<!-- Scripts
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="scripts/jquery.js"></script> 
+<script src="scripts/scripts.js"></script> 
+<script src="scripts/isotope.pkgd.min.js"></script>
+<script src="scripts/imagesloaded.pkgd.min.js"></script> 
+<script src="scripts/jquery.fancybox.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
 </body>
 </html>

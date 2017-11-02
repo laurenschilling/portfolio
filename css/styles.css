@@ -458,14 +458,6 @@ h3 {
 	letter-spacing: .01em;
 	text-transform: uppercase; }
 	
-/*
-	.portfolio-h3 {
-		text-transform: none;
-		font-weight: 500;
-		font-size: .9em;
-		padding-bottom: 1.5em; }
-*/
-	
 h4 {
 	font-size: 1.1em;
 	font-weight: 500;
@@ -491,6 +483,9 @@ p {
 
 .bold {
 	font-weight: 400; }
+	
+.italic {
+	font-style: italic; }
 	
 
 /* Pages
@@ -523,8 +518,69 @@ section {
 		font-size: 1.3em;
 		font-weight: 700;
 		text-transform: none;
-		margin-bottom: .3em;
-	}
+		margin-bottom: .3em; }
+	
+	.big {
+		font-size: 1.5em;
+		margin: 0;
+		padding: 0; }
+				
+	#intro .row p:nth-child(3) {
+		margin: .2em 0 2em 0; }
+		
+		.skills {
+			margin-bottom: 2em; }
+			
+			.skills li {
+				background-color: rgba(255,255,255, .1);
+				padding: 2px 10px 4px 10px;
+				border-radius: 1px;
+				margin-right: 2px;
+				color: #fff; }
+		
+		.see-work {
+			display: inline-block;
+			transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+				
+			.see-work a {
+				text-transform: uppercase;
+				letter-spacing: 0.06em;
+				color: #fff;
+				display: inline-block;
+				font-size: 0.79em;
+				font-weight: 500;
+				transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+			
+			.see-work,		
+			.see-work a span {
+				transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+			
+			.see-work a:hover {
+				text-decoration: none;
+				transform: translateX(40px); }
+				
+		#rect {
+			height: 30px;
+			width: 70px;
+			background-color: #49625e;
+			display: inline-block;
+			position: absolute;
+			transform: translatex(-70px);
+			z-index: 5; }
+					
+		#see-line {
+			display: block;
+			border-top: 1px solid #fff;
+			width: 40px;
+			position: relative;
+			top: 12px;
+			margin: 0;
+			padding: 0; }
+
+			.move-see-line {
+				left: -55px;
+				transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+
 	
 	#item-main section:not(:last-of-type) {
 		margin-bottom: 8%;	}
@@ -552,7 +608,7 @@ section {
 		
 		.trailer {
 			padding-bottom: 10px; }
-		
+
 		.files li {
 			background: #f8f8f8;
 			padding: 2px 10px 4px 10px;
@@ -572,7 +628,7 @@ section {
 				.files li:focus a {	
 					text-decoration: none;
 					color: #fff; }
-
+		
 #rectangle {
 	height: 60px;
 	width: 50px;
@@ -612,6 +668,7 @@ section {
 
 /* Home
 –––––––––––––––––––––––––––––––––––––––––––––––––– */	
+/*
 
 #menu-thumbs {
 	display:  flex; }
@@ -686,6 +743,7 @@ section {
 			#line-contact {
 				width: 270%;
 				left: -68px; }
+*/
 
 
 @-webkit-keyframes slideInLeft {
@@ -754,14 +812,6 @@ section {
 
 .project-desc h4 {
 		padding-bottom: 5px; }	
-
-	.project-desc a {
-		text-decoration: underline;
-		color: #3cb38f; } 
-		
-		.project-desc a:hover,
-		.project-desc a:focus {
-			color: #2D8067; } 
 	
 .button {
 	display: inline-block;
@@ -1047,7 +1097,8 @@ section {
 	.grid-img:hover {
 		-webkit-filter: opacity(.3) grayscale(1) contrast(1.1);
 		filter: opacity(.3) grayscale(1) contrast(1.1); 
-		transition: all .5s; }
+		transition: all .5s;
+		cursor: pointer; }
 		
 	.set .grid-img:hover {
 		-webkit-filter: grayscale(1);
@@ -1063,7 +1114,8 @@ section {
 	float: left;
 	width: 24%;
 	height: auto;
-	z-index: 2; }
+	z-index: 2;
+	cursor: pointer; }
 	
 	.grid-item--sml {
 		float: left;
@@ -1167,6 +1219,9 @@ section {
 	
 	main {
 		width: 80%;	}
+		
+	.big {
+		font-size: 1.1em; }
 		
 	#item-main {
 		padding-top: 50px; }

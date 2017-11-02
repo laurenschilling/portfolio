@@ -165,20 +165,38 @@ $(document).ready(function() {
 	}
     
 	// HOVER ANIMATIONS for menu items
-	$(function() {
-		var line;
-		
-		// on hover, show span line
-		$('#menu ul li').bind('mouseover', function() {
-			line = $(this).find('span');
-			line.removeClass('move-line-back').addClass('move-line');
-		});
+	var line;
 	
-		// on hover leave, hide span line	
-		$('#menu ul li').bind('mouseleave', function() {	
-			line.addClass('move-line-back').removeClass('move-line');
-		});
+	// on hover, show span line
+	$('#menu ul li').bind('mouseover', function() {
+		line = $(this).find('span');
+		line.removeClass('move-line-back').addClass('move-line');
 	});
+
+	// on hover leave, hide span line	
+	$('#menu ul li').bind('mouseleave', function() {	
+		line.addClass('move-line-back').removeClass('move-line');
+	});
+	
+	// see my work
+	$('.see-work').bind('mouseover', function() {
+		line = $(this).find('span');
+		line.removeClass('move-line-back').addClass('move-see-line');
+	});
+	
+	// SMOOTH SCROLL for see my work
+	$('.see-work a').on('click', function() {
+		event.preventDefault();
+		if ($('header').width() <= 450 ){
+			$('html, body').stop().animate({
+		        scrollTop: $("#portfolio").offset().top - 90
+			    }, 1000, 'easeInOutCubic');
+		} else {
+			$('html, body').stop().animate({
+		        scrollTop: $("#portfolio").offset().top - 20
+			    }, 1000, 'easeInOutCubic');
+		}
+	})
 	
 	// BACK TO TOP BUTTON
 	var offset = 900, 	// no of px to scroll before back to top button shows	
