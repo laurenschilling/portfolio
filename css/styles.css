@@ -37,16 +37,6 @@ body {
 	font-size: 14px;
 	color: #092F25; }
 
-/*
-.container {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	width: 98%;
-	margin: 0 auto -35px;
-	padding: 0 1%; }
-*/
-
 main {
 	z-index: 15;
 	width: 60%;
@@ -70,7 +60,7 @@ main {
 		#item-main .item-line {
 			width: 200%;
 			transform: translateX(-40%); }
-			
+
 		#h3 {
 			font-size: 1.1em;
 			letter-spacing: 0.01em;	}
@@ -347,80 +337,6 @@ nav {
 			margin: 0;
 			padding: 0; }
 
-/* fadeInDown and fadeOutUp animations from animate.css 
-	Animate.css - http://daneden.me/animate
-	Licensed under the MIT license - http://opensource.org/licenses/MIT
-	Copyright (c) 2015 Daniel Eden */
-
-.fadeInDown {	
-	-webkit-animation-name: fadeInDown;
-	animation-name: fadeInDown;
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-fill-mode: both;
-	animation-fill-mode: both;  } 
-
-.fadeOutUp {
-	-webkit-animation-name: fadeOutUp;
-	animation-name: fadeOutUp;
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-fill-mode: both;
-	animation-fill-mode: both;  } 
-
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-@-webkit-keyframes fadeOutUp {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-}
-
-@keyframes fadeOutUp {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-}
-
-
 
 /* Headings & Type
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -511,6 +427,10 @@ section {
 			z-index: 5;
 			position: relative;
 			transform: translateX(-60%); }
+			
+		.long {
+			width: 180%;
+			transform: translateX(-38%); }
 	
 	section h3 {
 		color: #fff;
@@ -666,132 +586,11 @@ section {
 		transition: opacity 1s 0s, visibility 0s 0s; }
 
 
-/* Home
-–––––––––––––––––––––––––––––––––––––––––––––––––– */	
-/*
-
-#menu-thumbs {
-	display:  flex; }
-	
-	.menu-thumb-items {
-		display: inline-block;
-		width: 30%;
-		margin: 0 auto;
-		margin-right: 5%;
-		position: relative; }
-	
-		.menu-thumb-items h2 {
-			text-transform: uppercase;
-			letter-spacing: 0.06em;
-			color: #fff;
-			display: inline-block;font-size: 0.79em;
-			font-weight: 500;
-			position: absolute;
-			z-index: 10; }
-			
-			.menu-thumb-items:nth-child(1) h2 {
-				top: 40px;
-				right: 32px; }
-				
-			.menu-thumb-items:nth-child(2) h2 {
-				bottom: 15px;
-				left: 40px; }
-				
-			.menu-thumb-items:nth-child(3) h2 {
-				bottom: 23px;
-				left: 48px; }
-		
-		.img-wrapper {
-			width: 100%;
-			height: auto;
-			position: relative; }
-		
-			.img-thumb {
-				width: 100%;
-				height: auto;
-				display: inline-block; }
-							
-		.rect-thumb {
-			width: 100%;
-			height: 97%;
-			display: inline-block;
-			background-color: rgba(23, 60, 57, .5);	
-			position: absolute;
-			top: 17px;
-			left: 17px;
-			z-index: 4; }
-			
-			#contact-thumb .rect-thumb {
-				z-index: -1; }
-			
-		span.line-thumb {
-			width: 10%;
-			height: 1px;
-			border-bottom: #fff 1px solid;
-			display: inline-block;
-			z-index: 5;
-			position: relative; }
-			
-			#line-portfolio {
-				width: 160%;
-				left: 25px; }
-				
-			#line-about {
-				width: 340%;
-				left: -65px; }
-				
-			#line-contact {
-				width: 270%;
-				left: -68px; }
-*/
-
-
-@-webkit-keyframes slideInLeft {
-  0% {
-    -webkit-transform: translate3d(-4px, 0, 0);
-    transform: translate3d(-4px, 0, 0);
-    visibility: visible;
-  }
-
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideInLeft {
-  0% {
-    -webkit-transform: translate3d(-4px, 0, 0);
-    transform: translate3d(-4px, 0, 0);
-    visibility: visible;
-  }
-
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.slideInLeft {
-  -webkit-animation-name: slideInLeft;
-  animation-name: slideInLeft;
-    -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-    -webkit-animation-iteration-count: 5;
-  animation-iteration-count: 5;
-}
-
-
 /* Portfolio Pages
 –––––––––––––––––––––––––––––––––––––––––––––––––– */	
 
 #portfolio {
-	width: 100%;
-}
+	width: 100%; }
 
 .portfolio-filter {
 	padding: 0 0 30px 2px;
@@ -870,8 +669,8 @@ section {
 		
 #item-content {
 	background-color: #fff;
-	width: 100%;
-}		
+	width: 100%; }
+			
 
 /* About 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */	
@@ -910,17 +709,7 @@ section {
 	width: 70%;
 	float: right;
 	margin-top: 8%; }
-		
-/*
-	.about h3 {
-		color: #fff;
-		font-family: 'Rufina';
-		font-size: 1.3em;
-		font-weight: 700;
-		text-transform: none;
-		margin-bottom: .3em; }	
-*/
-	
+			
 	.about p {
 		color: #fff;
 		margin-bottom: 3em; }	
@@ -1015,7 +804,6 @@ section {
  		z-index: 11;
  		width: 100%;
  		clear: both;
-/*  		max-width: 1700px; */
  		margin: 0 auto; }
 		
 		#copyright {	
@@ -1081,7 +869,8 @@ section {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .grid,
-.item-grid {
+.item-grid,
+.col3-grid {
 	width: 100%;
 	z-index: 1; }
 	
@@ -1129,6 +918,10 @@ section {
 		width: 49%;
 		height: auto;
 		z-index: 2; }
+		
+	.grid-sizer-col3,
+	.grid-item-col3 {
+		width: 32%; }
 	
 /* issue with z-index here */
 .grid-title {
@@ -1155,6 +948,123 @@ section {
 	
 	.show {
 		display: block; }
+		
+
+/* Animations
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* slideInLeft, fadeInDown and fadeOutUp animations from animate.css 
+	Animate.css - http://daneden.me/animate
+	Licensed under the MIT license - http://opensource.org/licenses/MIT
+	Copyright (c) 2015 Daniel Eden */
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+    transform: translate3d(-4px, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+    transform: translate3d(-4px, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+    -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+    -webkit-animation-iteration-count: 5;
+  animation-iteration-count: 5;
+}
+
+.fadeInDown {	
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;  } 
+
+.fadeOutUp {
+	-webkit-animation-name: fadeOutUp;
+	animation-name: fadeOutUp;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;  } 
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
 
 
 /* Media Queries
@@ -1206,8 +1116,10 @@ section {
 		width: 100%; }
 			
 	.grid-sizer,
+	.grid-sizer-col3,
 	.grid-item,
-	.grid-item--big {
+	.grid-item--big,
+	.grid-item-col3 {
 		width: 48%; }
 }
 
@@ -1227,8 +1139,10 @@ section {
 		padding-top: 50px; }
 	
 	.grid-sizer,
+	.grid-sizer-col3,
 	.grid-item,
-	.grid-item--big {
+	.grid-item--big,
+	.grid-item-col3 {
 		width: 48%; }
 		
 	.footer {

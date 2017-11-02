@@ -30,8 +30,6 @@ $(document).ready(function() {
 
 
 	// ---- NAVIGATION ----
-
-		
 	$(document).on('scroll', onScroll);
 
 	// TOGGLE MENU when hamburger is clicked	
@@ -229,7 +227,7 @@ $(document).ready(function() {
 	
 	// ---- ISOTOPE PLUGIN ----
 	  	
-	// initialise isotope	
+	// initialise isotope for portfolio item grids	
 	var $itemGrid = $('.item-grid').isotope({
 		// options
 		itemSelector: '.grid-item',
@@ -240,14 +238,31 @@ $(document).ready(function() {
 			gutter: 10
   		}
 	})
-
+	
 	// layout isotope after each image loads
 	$itemGrid.imagesLoaded().progress( function() {
 		$itemGrid.isotope('layout');
 	});
+	
+	// initialise isotope for 3 column grid
+	var $threeGrid = $('.col3-grid').isotope({
+		// options
+		itemSelector: '.grid-item-col3',
+		layoutMode: 'masonry',
+		percentPosition: true,
+		masonry: {
+			columnWidth: '.grid-sizer-col3',
+			gutter: 10,
+			horizontalOrder: true
+  		}
+	})
+	
+	// layout isotope after each image loads
+	$threeGrid.imagesLoaded().progress( function() {
+		$threeGrid.isotope('layout');
+	});
 
-
-	// initialise isotope	
+	// initialise isotope for main portfolio grid
 	var $grid = $('.grid').isotope({
 		// options
 		itemSelector: '.grid-item',
