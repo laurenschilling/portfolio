@@ -1,21 +1,26 @@
 /*
 	
 Author: Lauren Schilling 
-Additional CSS styles for Lauren Schilling, Web Designer.
+CSS styles for Lauren Schilling, Web Designer.
 
 Table of Contents:
 
-01. Base Styles
-02. Logo
-03. Lists
-04. Nav
-05. Headings & Type
-06. CV Page
-07. Footer
-08. Forms
+ 1. Base Styles
+ 2. Landing Page
+ 3. Logo
+ 4. Lists
+ 5. Nav
+ 6. Headings & Type
+ 7. Pages
+ 8. Portfolio Pages
+ 9. About
+10. Contact
+11. Footer
+12. Grid – Masonry
+13. Animations
+14. Media Queries  */
 
 
-*/
 
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -1016,28 +1021,36 @@ section {
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
+/*
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
+*/
   }
 
   100% {
     opacity: 1;
+/*
     -webkit-transform: none;
     transform: none;
+*/
   }
 }
 
 @keyframes fadeInDown {
   0% {
     opacity: 0;
+/*
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
+*/
   }
 
   100% {
     opacity: 1;
+/*
     -webkit-transform: none;
     transform: none;
+*/
   }
 }
 
@@ -1048,8 +1061,10 @@ section {
 
   100% {
     opacity: 0;
+/*
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
+*/
   }
 }
 
@@ -1060,8 +1075,10 @@ section {
 
   100% {
     opacity: 0;
+/*
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
+*/
   }
 }
 
